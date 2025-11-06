@@ -20,7 +20,7 @@ public:
     Circle()
     {
         m_radius=1;
-        m_m_area=3.14;
+        calcArea(1);
     };
 
     Circle(double radius)
@@ -30,7 +30,7 @@ public:
         calcArea(radius);
     }
 
-    virtual void display(){
+    void display(){
         cout<<fixed<<setprecision(2);
         cout<<"The area of a circle with ..."<<endl;
         cout<<"a radius of "<<m_radius<<" inches"<<endl;
@@ -48,15 +48,15 @@ private:
         m_volume = M_PI * pow(r, 2) * h;
     };
 public:
-    Cylinder(double radius, double height){
+    Cylinder(double radius, double height):Circle(radius){
         m_height=height;
 
-        Cylinder::calcVolume(radius, height);
+        calcVolume(radius, height);
     };
-    void display() override
+    void display()
     {
-        cout<<"Debug"<<endl;
-        Circle::display();
+        // cout<<"Debug"<<endl;
+        // Circle::display();
         cout<<"And the volume of a Cylinder with..."<<endl;
         cout<<"a circular end area of "<<m_m_area<<" square inches"<<endl;
         cout<<"and a height of "<<m_height<<" inches"<<endl;
