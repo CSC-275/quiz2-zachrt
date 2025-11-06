@@ -30,7 +30,7 @@ public:
         calcArea(radius);
     }
 
-    void display(){
+    void display() {
         cout<<fixed<<setprecision(2);
         cout<<"The area of a circle with ..."<<endl;
         cout<<"a radius of "<<m_radius<<" inches"<<endl;
@@ -38,7 +38,7 @@ public:
     };
 };
 
-class Cylinder: public Circle {
+class Cylinder : public Circle {
 private:
     double m_height;
     double m_volume;
@@ -55,8 +55,6 @@ public:
     };
     void display()
     {
-        // cout<<"Debug"<<endl;
-        // Circle::display();
         cout<<"And the volume of a Cylinder with..."<<endl;
         cout<<"a circular end area of "<<m_m_area<<" square inches"<<endl;
         cout<<"and a height of "<<m_height<<" inches"<<endl;
@@ -70,7 +68,7 @@ int main() {
     cout<<endl;
     c2.display();
     cout<<endl;
-    Circle *cl1 = new Cylinder(3.5,8.65);
+    Cylinder *cl1 = new Cylinder(3.5,8.65);
     cl1->display();
     return 0;
 }
